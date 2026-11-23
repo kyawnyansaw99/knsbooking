@@ -1,0 +1,72 @@
+@import 'tailwindcss';
+
+/*
+ * KNSbooking design tokens
+ * ink  – deep lagoon teal (primary, text, surfaces on dark)
+ * gold – warm Thai-silk gold (accents, highlights)
+ * sand – warm neutrals (backgrounds, borders, muted text)
+ */
+@theme {
+  --font-sans: 'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif;
+  --font-display: 'Fraunces', ui-serif, Georgia, serif;
+
+  --color-ink-50: #eef6f5;
+  --color-ink-100: #d5e9e6;
+  --color-ink-200: #aed3ce;
+  --color-ink-300: #7fb6b0;
+  --color-ink-400: #4f938d;
+  --color-ink-500: #337873;
+  --color-ink-600: #285f5c;
+  --color-ink-700: #224d4b;
+  --color-ink-800: #1b3d3c;
+  --color-ink-900: #143030;
+  --color-ink-950: #0b1e1e;
+
+  --color-gold-50: #fbf7ef;
+  --color-gold-100: #f4ead4;
+  --color-gold-200: #e8d3a7;
+  --color-gold-300: #dab775;
+  --color-gold-400: #cf9f52;
+  --color-gold-500: #c4873d;
+  --color-gold-600: #ab6b33;
+  --color-gold-700: #8e522d;
+
+  --color-sand-50: #faf8f5;
+  --color-sand-100: #f3efe9;
+  --color-sand-200: #e7e0d6;
+  --color-sand-300: #d5cbbd;
+  --color-sand-400: #b4a794;
+  --color-sand-500: #978a77;
+  --color-sand-600: #7b6f5f;
+  --color-sand-700: #645a4e;
+  --color-sand-800: #4a433b;
+  --color-sand-900: #2f2b26;
+
+  --shadow-soft: 0 1px 2px rgb(20 48 48 / 0.04), 0 8px 24px -10px rgb(20 48 48 / 0.14);
+  --shadow-lift: 0 2px 6px rgb(20 48 48 / 0.06), 0 24px 48px -16px rgb(20 48 48 / 0.28);
+}
+
+html {
+  background: var(--color-sand-50);
+  scroll-behavior: smooth;
+}
+
+/* Diagonal hatch used for pending (unconfirmed) bookings on timelines. */
+.bg-hatch {
+  background-image: repeating-linear-gradient(
+    -45deg,
+    rgb(207 159 82 / 0.4) 0 6px,
+    rgb(251 247 239 / 0.95) 6px 12px
+  );
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+  }
+}
